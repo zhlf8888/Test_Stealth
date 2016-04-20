@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Tags {
+public class Tags
+{
     public static string Players = "Players";
     public static string MainLight = "MainLight";
     public static string AlarmLight = "AlarmLight";

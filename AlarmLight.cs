@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class AlarmLight : MonoBehaviour {
+public class AlarmLight : MonoBehaviour
+{
 
     public float fadeSpeed = 2f;
     public float highIntensity = 4f;
@@ -20,7 +21,7 @@ public class AlarmLight : MonoBehaviour {
 
     void CheckTargetIntensity()
     {
-        if(Mathf.Abs(targetIntensity - alarmLight.intensity) < changeMargin)
+        if (Mathf.Abs(targetIntensity - alarmLight.intensity) < changeMargin)
         {
             if (targetIntensity == highIntensity)
                 targetIntensity = lowIntensity;
@@ -30,12 +31,14 @@ public class AlarmLight : MonoBehaviour {
     }
 
     // Use this for initialization
-    void Start () {
-	    
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
         if (alarmOn)
         {
             alarmLight.intensity = Mathf.Lerp(alarmLight.intensity, targetIntensity, fadeSpeed * Time.deltaTime);
@@ -45,5 +48,5 @@ public class AlarmLight : MonoBehaviour {
         {
             alarmLight.intensity = Mathf.Lerp(alarmLight.intensity, 0f, fadeSpeed * Time.deltaTime);
         }
-	}
+    }
 }
