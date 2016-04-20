@@ -33,6 +33,24 @@ public class LastPlayerSighting : MonoBehaviour {
         }
      }
 
+    public void SwitchAlarms ()
+    {
+        alarmScript.alarmOn = (position != resetPosition);
+        float newIntensity;
+        if (position != resetPosition)
+            newIntensity = lightLowIntensity;
+        else
+            newIntensity = lightHighIntensity;
+        mainLight.intensity = Mathf.Lerp(mainLight.intensity, newIntensity, fadeSpeed * Time.deltaTime);
+        for(int i = 0; i < sirens.Length; ++i)
+        {
+            if (position != resetPosition && !sirens[i].isPlaying)
+                sirens[i].Play();
+            else if (position == resetPosition)
+                sirens[i].Stop();
+        }
+    }
+
 	void Start () {
 	    
 	}
