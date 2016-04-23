@@ -30,10 +30,10 @@ public class LastPlayerSighting : MonoBehaviour {
         for(int i = 0; i < sirens.Length; ++i)
         {
             sirens[i] = sirenGameObjects[i].GetComponent<AudioSource>();
-        }
+        } 
      }
 
-    public void SwitchAlarms ()
+    void SwitchAlarms ()
     {
         alarmScript.alarmOn = (position != resetPosition);
         float newIntensity;
@@ -51,11 +51,8 @@ public class LastPlayerSighting : MonoBehaviour {
         }
     }
 
-	void Start () {
-	    
-	}
-	
-	void Update () {
-	
-	}
+    void MusicFading()
+    {
+
+    }
 }
